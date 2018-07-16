@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Series from './containers/Series';
 import './App.css';
-//import 'whatwg-fetch';
 
 class App extends Component {
   render() {
