@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Series from './containers/Series';
 import './App.css';
+import './assets/semantic-ui-css/semantic.css';
 
 const App = () => {
   return (
