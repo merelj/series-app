@@ -29,8 +29,9 @@ class Series extends Component {
             <div>
                 <Intro message="Here you can find all of your most loved series!" />
 
-                <div>
+                <div className="ui input">
                     <input
+                        placeholder="Search..."
                         value = { seriesName }
                         type="text"
                         onChange={this.onSeriesInputChange} />
