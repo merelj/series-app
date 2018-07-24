@@ -5,7 +5,7 @@ import SeriesListItem from './SeriesListItem.js';
 const SeriesList = ({list}) => {
   return (
     <div>
-      <ul className="series-list">
+      <ul className="series-list ui grid">
         {list.map((series) => (
           <SeriesListItem key={"series"} series={series} />
         ))}
