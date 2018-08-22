@@ -6,6 +6,7 @@ const SeriesListItem = ({series}) => {
 
   let imageUrl = series.show.image.medium;
   let rating = series.show.rating.average;
+  let seriesPageUrl = "https://www.tvmaze.com/shows/" + series.show.id;
 
   if (rating == null) {
     rating = "No rating";
@@ -19,16 +20,18 @@ const SeriesListItem = ({series}) => {
     <li className="four wide column" key={series.show.id}>
       <div>
         <ul>
-          <li><img src={imageUrl}></img></li>
-          <li><h4 className="ui header">{series.show.name}</h4></li>
-          <li>
-            <div class="ui label">
-              <i class="star icon"></i> {rating}
-            </div>
-          </li>
-          <li>{series.show.type}</li>
+          <a href={seriesPageUrl}>
+            <li><img src={imageUrl}></img></li>
+            <li><h4 className="ui header">{series.show.name}</h4></li>
+            <li>
+              <div class="ui label">
+                <i class="star icon"></i> {rating}
+              </div>
+            </li>
+            <li>{series.show.type}</li>
 
-          <li>Language: {series.show.language}</li>
+            <li>Language: {series.show.language}</li>
+          </a>
         </ul>
       </div>
     </li>
