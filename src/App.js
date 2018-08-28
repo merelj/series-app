@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
 
+//       <h1 className="ui header">{this.props.name} - Find your favourite series</h1>
       <Header name={appName} />
       <Series/>
       </div>
