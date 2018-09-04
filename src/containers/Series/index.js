@@ -4,9 +4,8 @@ import SeriesListItem from '../../components/SeriesListItem';
 import Loader from '../../components/Loader';
 import Intro from "../../components/Intro";
 
-
 class Series extends Component {
-    state = {
+      state = {
         series: [],
         seriesName: '',
         isFetching: false
