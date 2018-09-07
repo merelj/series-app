@@ -35,15 +35,3 @@ test('renders without crashing', () => {
     const appComponent = findByTestAttr(wrapper, 'component-app');
     expect(appComponent.length).toBe(1);
 });
-
-test('h1 should be rendered', () => {
-    const wrapper = setup();
-    const headerOne = findByTestAttr(wrapper, 'header-one');
-    expect(headerOne.length).toBe(1);
-});
-
-test('expect h1 to have "Series" text', () => {
-    const wrapper = setup();
-    const headerOne = findByTestAttr(wrapper, 'header-one');
-    expect(headerOne.text()).toContain('Series');
-});
