@@ -7,7 +7,7 @@ const SeriesList = ({list}) => {
     <div>
       <ul className="series-list ui grid">
         {list.map((series) => (
-          <SeriesListItem key={"series"} series={series} />
+          <SeriesListItem key={"series-" + series.show.id} series={series} />
         ))}
       </ul>
     </div>

@@ -5,21 +5,26 @@ import Loader from '../../components/Loader';
 import Intro from "../../components/Intro";
 
 class Series extends Component {
-      state = {
+    state = {
         series: [],
         seriesName: '',
         isFetching: false
     };
 
-    onSeriesInputChange = e => {
-        this.setState({ seriesName: e.target.value, isFetching: true });
+    onSeriesInputChange = (e) => {
+        // React destroys event objects as soon as it can, so we have to store value in this const:
+        const { value: seriesName = '' } = e.target;
+        this.setState({ seriesName, isFetching: true });
 
-        fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
-            .then(response => response.json())
-            .then(json => this.setState({ series: json, isFetching: false }));
+        clearTimeout(this.STO);
+        this.STO = setTimeout(() => { // sends requests 300 ms after user finished typing (unless he decides to type some more)
+            fetch(`http://api.tvmaze.com/search/shows?q=${seriesName || ''}`)
+                .then(response => response.json())
+                .then(json => this.setState({ series: json, isFetching: false }));
+        }, 300);
 
         console.log(e);
-        console.log(e.target.value)
+        console.log(seriesName)
     };
 
     render() {
